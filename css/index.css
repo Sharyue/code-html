@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+
+
+/* 公共样式 */
+*{margin:0;padding:0;list-style-type:none; font-size:100%;}
+p,li,a{font:100% "Microsoft Yahei""Bauhaus ITC" ; /*text-align:center;*/}
+
+/*游戏首页面*/
+#imagess { width:70%; margin:0 auto; margin-top:25%;}
+#imagess img{ width:100%; vertical-align:central;}
+
+#jindutiao{ width:60%; margin:0 auto;}
+
+
+
+
+
+
+/*分享抽奖页面*/
+.wu{ width:90%; margin:0 auto; margin-top:20px; overflow:hidden; color:#F00;}
+.wu .wul{ width:70%; float:left;}
+/*.wu .wul p{ float:left;}*/
+.wu .wul img{ float:left; width:140%;}
+
+
+#win{ width:100%; margin-top:50px;}
+#win .win{ width:65%; margin:0 auto;}
+#win .win img{ width:100%;}
+
+
+
+#wenzis{ width:65%; margin:0 auto; margin-top:20px; }
+#wenzis .wenzis{ background-image:url(../images/wenzi000.png); height:30px; background-repeat:no-repeat; background-size:100%; position:relative;}
+#wenzis .wenzis p{ padding-top:5px; margin-left:26.5%; font-size:20px; color:#ff8584; font-weight:800;}
+#wenzis .wenzis span{ margin-left:38%;}
+#wenzix{ width:85%; margin:0 auto; margin-top:10px; }
+#wenzix .wenzix{ background-image:url(../images/wenzi0000.png); height:30px; background-repeat:no-repeat; background-size:100%; position:relative;}
+#wenzix .wenzix p{ padding-top:5px; margin-left:21%; font-size:20px; color:#ff8584; font-weight:800;}
+
+#images { width:30%; margin:0 auto; margin-top:20%;}
+#images img{ width:100%; vertical-align:central;}
+
+#lijianniu{ width:100%; margin:20px 0;}
+#lijianniu .lijianniu{ width:40%; margin:0 auto;}
+#lijianniu .lijianniu img{ width:100%;}
+
+#erweima{ width:100%; button:0;}
+#erweima img{ width:100%; button:0; position:relative;}
+#erweima .weima{ width:50%; margin-top:-46%; margin-left:13%;}
+#erweima .weima img{ width:28%; position:absolute;}
+
+/*填写中奖信息页面*/
+#tianxie{ width:80%; margin:0 auto; margin-top:50px;}
+/*input{ width:100%;  border:1px solid #CCC; background:#FFF; border-radius:25px;}
+.xingming{ padding:1rem; margin-top:10px;}*/
+
+#tianxie input{ background-image:url(../images/xingming.png); background-repeat:no-repeat; background-size:10%; width:100%; height:50px; border:1px solid #CCC; border-radius:25px;}
+.xingming{ background-image:url(../images/xingming.png); background-repeat:no-repeat; line-height:30px; middle-align:left;}
+
+.numberz input{ background-image:url(../images/shouji.png); background-repeat:no-repeat; background-size:10%; width:100%; height:50px; border:1px solid #CCC; border-radius:25px;}
+
+.numberz{ width:80%; margin:0 auto;}
+.number{ line-height:30px;  margin-top:20px;}
+
+.shenfenz input{ background-image:url(../images/shenfenzheng.png); background-repeat:no-repeat; background-size:10%; top:10px; width:100%; height:50px; border:1px solid #CCC; border-radius:25px;}
+.shenfenz{ width:80%; margin:0 auto;}
+.shenfen{ line-height:30px;  margin-top:20px;}
+
+#shouhuo{ width:80%; margin:0 auto;}
+#shouhuo textarea{ background-image:url(../images/dizhi.png); background-repeat:no-repeat; background-size:10%; width:100%; height:200px; border:1px solid #CCC; border-radius:40px;}
+.shouhuo{ padding-top:10px;  margin-top:20px;}
+
+#anniu{ width:80%; margin:0 auto; margin-top:30px;}
+#anniu .fangqi{ width:50%; float:left;}
+#anniu .fangqi img{ width:70%;}
+#anniu .tijiao{ width:50%; float:right;}
+#anniu .tijiao img{ width:70%; float:right;}
+
+/*更改的页面CSS样式*/
+html,body {
+	padding:0px;
+	margin:0px;
+	width:100%;
+	height:100%;	
+}
+.bgBox {
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:url(../images/xinxibj.png) no-repeat;
+	background-size:100% 100%;
+}
+.bgBox .formBox {
+	width:100%;
+	height:auto;
+	margin-top:90px;
+}
+.bgBox .form-group {
+	height:50px;
+	position:relative;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10%;
+	padding-right:10%;
+	text-align:center;
+}
+
+.bgBox .form-group .form-text,.bgBox .form-group .form-textarea {
+	width:100%;
+	height:50px;	
+	border:1px solid #ccc;
+	padding-left:50px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	-ms-border-radius:20px;
+	-o-border-radius:20px;
+	font-size:16px;
+}
+.form-textarea-group {
+	height:200px !important;	
+}
+.bgBox .form-group .form-textarea {
+	width:100%;
+	height:	200px;
+	font-size:16px;
+	padding-top:15px;
+}
+.bgBox .form-group label.icon {
+		display:block;
+		position:absolute;
+		height:50px;
+		width:50px;
+	}
+.icon-name {
+	background:url(../images/xingming.png) no-repeat;
+	background-size:70%;
+	background-position:8px 7px;
+	border:none;	
+}
+.icon-phone {
+	background:url(../images/shouji.png) no-repeat;
+	background-size:70%;
+	background-position:8px 8px;
+}
+.icon-ID {
+	background:url(../images/shenfenzheng.png) no-repeat;
+	background-size:70%;
+	background-position:10px 7px;
+}
+.icon-address {
+	background:url(../images/dizhi.png) no-repeat;	
+	background-size:70%;
+	background-position:6px 7px;
+}
+.form-group .btn {
+	width:115px;
+	height:62px;
+	border:none;
+}
+.btn-back {
+	background:url(../images/fangqi.png) no-repeat;
+	background-size:100% 100%;
+	margin-right:20px;
+}
+.btn-submit {
+	background:url(../images/tijiao.png) no-repeat;
+	background-size:100% 100%;
+	margin-left:20px;
+}
+
+
+
+
+
+/*抽奖页面*/
+.plate{position:relative; background-image:url(images/lyplate.png); background-repeat: no-repeat;}
+.prize{float:right;width:360px;height:390px;}
+.prize ul{list-style-type:none;}
+.prize li{margin:10px;}
+
+.result{ position:relative; width:80%; margin:0 auto; height:30px; background:#fcf5de; border-radius:10px; margin-top:1.5rem;}
+.result p{ width:100%; position:absolute; text-align:center; padding-top:6px;}
+.result a{ text-align:center; text-decoration:none; font-size:90%; top:10px; color:#f74647;}
+#result{ position:absolute;display:none;left:10%; margin-top:-27px;width:80%; /*margin:-28px auto;height:120px;background-color:rgba(0,0,0,0.75);filter:alpha(opacity=90);*/ z-index:99;}
+#resultTxt{padding:3px 0; color:#f74647;text-align:center;}
+#resultTxt em{ font-style:normal; /*text-align:center;*/}
+#resultBtn{position:absolute;right:5px;top:5px;width:25px;height:25px;text-indent:-100px;/*background-image:url(images/close.png);*/overflow:hidden;}
+
+#choujiang{width:100%;padding-top:0.5rem;}
+
+.jihui{ width:90%; margin:0 auto; overflow:hidden; color:#FFF;}
+.jihui .jihuil{ width:50%; float:left;}
+.jihui .jihuil span{ color:#900;}
+.jihui .jihuir{ width:50%; float:right;}
+.jihui .jihuir p{ float:right; color:#FFF; text-decoration:inherit;}
+.jihui .jihuir span{color:#900;}
+
+.choujiang{width:85%;margin:0 auto; margin-top:0.5rem; position:relative;height:100%;}
+.choujiang img{ display:block;width:100%; z-index:3;}
+
+#lijichou img{ position:absolute;left:25%;top:24.6%;width:50%; z-index:1;}
+
+/* 顶部下载开始*/
+.banner{ width:100%;}
+.banner img{ float:left; width:100%; /*position:absolute;*/ margin-top:-93.5%; position:relative; z-index:9999;}
+.guanbi{ float:right; width:100%; margin-top:7%; }
+.guanbi img{ float:right; margin-right:2%; width:6%;}
+/* 顶部下载结束*/
+
+.shuaxin{ width:90%; margin:0 auto;}
+.shuaxin .shuaxintu{ width:10%; float:right; margin-top:-15%; position:relative;}
+
+#guize{ position:relative; width:95%; margin:0 auto; margin-top:1.3rem; min-height:120px; overflow-x:auto; overflow-y:hidden; border:none; border-radius:10px;}
+#guize ul{ width:110%;}
+#guize ul img{position:relative; width:160%; /*margin-right:15px;*/ z-index:-998; }
+/*中奖记录开始*/
+#guize .guizez{ width:160%;position:absolute; margin:0 auto; top:28%; overflow:hidden;}
+#guize .guizez .guize_l{ float:left; width:45%;}
+#guize .guizez .guize_l p{ color:#926911; }
+#guize .guizez .guize_l .nicheng{ float:left; width:40%; }
+#guize .guizez .guize_l .nicheng p{}
+#guize .guizez .guize_l .chouzhong{ float:left; width:15%;}
+#guize .guizez .guize_l .jiangxiang{ float:right; width:40%;}
+#guize .guizez .guize_l .jiangxiang p{ color:#e9894a;}
+/*中奖记录结束*/
+
+/*活动规则开始*/
+#guize .guizez .guize_r{ float:right; width:55%;}
+#guize .guizez .guize_r li{ /*font-size:100%; line-height:25px;*/ width:100%; padding-left:15%; color:#906a12;}
+/*活动规则结束*/
+
+
+
+@media screen and (max-width: 800px) {
+  #guize{ font-size:150%;}
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:25%; overflow:hidden; line-height:40px;}
+}
+
+@media screen and (min-width: 600px) {
+  #guize{ font-size:150%;}
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:25%; overflow:hidden; line-height:40px;}
+}
+
+
+@media screen and (min-width: 414px) {
+  #guize{ font-size:90%;}
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:25%; overflow:hidden; line-height:24px;}
+}
+@media screen and (min-width: 412px) {
+  #guize{ font-size:90%;}
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:25%; overflow:hidden; line-height:24px;}
+}
+@media screen and (max-width: 384px) {
+  #guize{ font-size:90%;}
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:25%; overflow:hidden; line-height:22px;}
+}
+@media screen and (max-width: 375px) {
+  #guize{ font-size:90%;}
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:25%; overflow:hidden; line-height:22px;}
+}
+@media screen and (max-width: 320px) {
+  #guize{ font-size:60%;/* line-height:15px;*/ }
+  #guize .guizez{ width:160%;position:absolute; left:10%; top:23%; overflow:hidden; line-height:20px;}
+}
+
+#loadingDiv{width:100%;height:100%; background:url(images/fenxiangjiantou.png) top  center no-repeat; background-size:100%; z-index:999999;}
+

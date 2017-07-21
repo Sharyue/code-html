@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no"/>
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<style type="text/css">                 
+/* demo css */
+body{ width:100%; height:100%; background:url(images/beijing.png) scroll  no-repeat; top:0; left:0; background-size:100%;}
+</style>
+
+<script type="text/javascript">
+var i = 0;
+var res = 0;
+var context = null;
+var total_width = 230;
+var total_height = 15;
+var initial_x = 0;
+var initial_y = 0;
+var radius = total_height/2;
+window.onload = function() {
+	var elem = document.getElementById('myCanvas');
+	if (!elem || !elem.getContext) {
+		return;
+	}
+
+	context = elem.getContext('2d');
+	if (!context) {
+		return;
+	}
+
+	// ÉèÖÃ×ÖÌå
+	context.font = "12px Verdana";
+
+	// À¶É«½ø¶ÈÌõµÄÌÝ¶È
+	var progress_lingrad = context.createLinearGradient(0,initial_y+total_height,0,0);
+	progress_lingrad.addColorStop(0, '#ffca07');
+	progress_lingrad.addColorStop(0.4, '#ffa908');
+	progress_lingrad.addColorStop(1, '#ffca07');
+	context.fillStyle = progress_lingrad;
+
+	//draw();  »­
+	res = setInterval(draw, 12);//setInterval() ·½·¨¿É°´ÕÕÖ¸¶¨µÄÖÜÆÚ£¨ÒÔºÁÃë¼Æ£©À´µ÷ÓÃº¯Êý»ò¼ÆËã±í´ïÊ½¡£
+}
+
+function draw() {
+	i+=1;
+	// Çå³þÖ®Ç°ËùÓÐµÄÍ¼Ö½
+	context.clearRect(initial_x-5,initial_y-5,total_width+15,total_height+15);//context.clearRect(x,y,width,height);Çå³ý¾ØÐÎ
+	progressLayerRect(context, initial_x, initial_y, total_width, total_height, radius);
+	progressBarRect(context, initial_x, initial_y, i, total_height, radius, total_width);
+	progressText(context, initial_x, initial_y, i, total_height, radius, total_width );
+	if (i>=total_width) {
+		clearInterval(res);
+		window.location.href="http://shop.booea.cn:8181/huodong/huodong.html";
+	}
+}
+
+
+function roundRect(ctx, x, y, width, height, radius) {
+	ctx.beginPath();
+	ctx.moveTo(x + radius, y);
+	ctx.lineTo(x + width - radius, y);
+	ctx.arc(x+width-radius, y+radius, radius, -Math.PI/2, Math.PI/2, false);
+	ctx.lineTo(x + radius, y + height);
+	ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+	ctx.closePath();
+	ctx.fill();
+}
+
+
+function roundInsetRect(ctx, x, y, width, height, radius) {
+	ctx.beginPath();
+	// »­¾Þ´óÄæÊ±Õë·½ÏòµÄºÐ×Ó
+	ctx.moveTo(1000, 1000);
+	ctx.lineTo(1000, -1000);
+	ctx.lineTo(-1000, -1000);
+	ctx.lineTo(-1000, 1000);
+	ctx.lineTo(1000, 1000);
+	ctx.moveTo(x + radius, y);
+	ctx.lineTo(x + width - radius, y);
+	ctx.arc(x+width-radius, y+radius, radius, -Math.PI/2, Math.PI/2, false);
+	ctx.lineTo(x + radius, y + height);
+	ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+	ctx.closePath();
+	ctx.fill();
+}
+
+function progressLayerRect(ctx, x, y, width, height, radius) {
+	ctx.save();
+	// ÉèÖÃÒõÓ°×öÒ»Ð©Éî¶È
+	ctx.shadowOffsetX = 2;
+	ctx.shadowOffsetY = 2;
+	ctx.shadowBlur = 5;
+	ctx.shadowColor = '#666';
+
+	 // ´´½¨³õÊ¼»ÒÉ«²ã
+	ctx.fillStyle = 'rgba(189,189,189,1)';
+	roundRect(ctx, x, y, width, height, radius);
+
+	// ¸²¸ÇÓëÌÝ¶È
+	ctx.shadowColor = 'rgba(0,0,0,0)'
+	var lingrad = ctx.createLinearGradient(0,y+height,0,0);
+	lingrad.addColorStop(0, 'rgba(255,255,255, 0.1)');
+	lingrad.addColorStop(0.4, 'rgba(255,255,255, 0.7)');
+	lingrad.addColorStop(1, 'rgba(255,255,255,0.4)');
+	ctx.fillStyle = lingrad;
+	roundRect(ctx, x, y, width, height, radius);
+
+	ctx.fillStyle = 'white';  //°×É«
+	//roundInsetRect(ctx, x, y, width, height, radius);
+
+	ctx.restore();
+}
+
+
+function progressBarRect(ctx, x, y, width, height, radius, max) {
+	// varÀ´´æ´¢ÊÊµ±µÄÌî³äÔÚÔ²ÐÎÇøÓòÄÚµÄÆ«ÒÆÁ¿
+	var offset = 0;
+	ctx.beginPath();
+	if (width<radius) {
+		offset = radius - Math.sqrt(Math.pow(radius,2)-Math.pow((radius-width),2));
+		ctx.moveTo(x + width, y+offset);
+		ctx.lineTo(x + width, y+height-offset);
+		ctx.arc(x + radius, y + radius, radius, Math.PI - Math.acos((radius - width) / radius), Math.PI + Math.acos((radius - width) / radius), false);
+	}
+	else if (width+radius>max) {
+		offset = radius - Math.sqrt(Math.pow(radius,2)-Math.pow((radius - (max-width)),2));
+		ctx.moveTo(x + radius, y);
+		ctx.lineTo(x + width, y);
+		ctx.arc(x+max-radius, y + radius, radius, -Math.PI/2, -Math.acos((radius - (max-width)) / radius), false);
+		ctx.lineTo(x + width, y+height-offset);
+		ctx.arc(x+max-radius, y + radius, radius, Math.acos((radius - (max-width)) / radius), Math.PI/2, false);
+		ctx.lineTo(x + radius, y + height);
+		ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+	}
+	else {
+		ctx.moveTo(x + radius, y);
+		ctx.lineTo(x + width, y);
+		ctx.lineTo(x + width, y + height);
+		ctx.lineTo(x + radius, y + height);
+		ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+	}
+	ctx.closePath();
+	ctx.fill();
+
+	// »­½ø¶ÈÌõ±ß¾³µÄÓ°×Ó
+	if (width<max-1) {
+		ctx.save();
+		ctx.shadowOffsetX = 1;
+		ctx.shadowBlur = 1;
+		ctx.shadowColor = '#666';
+		if (width+radius>max)
+		  offset = offset+1;
+		ctx.fillRect(x+width,y+offset,1,total_height-offset*2);
+		ctx.restore();
+	}
+}
+
+
+function progressText(ctx, x, y, width, height, radius, max) {
+	ctx.save();
+	ctx.fillStyle = 'white';
+	var text = Math.floor(width/max*100)+"%";
+	var text_width = ctx.measureText(text).width;
+	var text_x = x+width-text_width-radius/2;
+	if (width<=radius+text_width) {
+		text_x = x+radius/2;
+	}
+	ctx.fillText(text, text_x, y+12);     //ç™¾åˆ†æ¯”çš„é«˜åº¦åæ ‡
+	ctx.restore();
+}
+</script>
+
+
+</head>
+
+<body>
+
+<div id="imagess">
+	<img src="images/loading.gif">
+</div>
+
+<div style="width:60%;margin:0 auto; margin-top:10px;">
+	<canvas id="myCanvas" width="250" height="30"></canvas>
+</div>
+
+</body>
+</html>

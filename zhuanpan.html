@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no"/>
+<title>转盘</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<style type="text/css">                 
+/* demo css */
+body{ width:100%; height:100%; background:url(images/beijingb.png) no-repeat; background-size:100%;}
+
+#plateBtn{position:absolute;left:27%;top:26.65%;width:46%;height:46%;background-image:url(images/jiantou.png); background-repeat:no-repeat; background-size:100%; z-index:9999; outline-style:none;
+/*text-indent:-9999px;overflow:hidden;*/}
+
+#loadingDiv{width:100%;height:100%; position:fixed;display:none;top:0px;left:0px;background:url(images/fenxiangjiantou.png) top  center no-repeat; background-size:100%; z-index:99999;}
+
+</style>
+</head>
+
+<body>
+
+<div id="loadingDiv"></div>
+        <!--<div class="fenxiang">
+            <img src="img/icon-fenxiang.png"></a>
+        </div>-->
+
+<div id="choujiang">
+
+    <div class="jihui">
+            <div class="jihuil">
+                <p>ÄãÓÐ<span> 1 </span>´Î³é½±»ú»á</p>
+            </div>
+            <div class="jihuir">
+                <a href="#"><p>·ÖÏíÔÙÀ´<span> 1 </span>´Î</p></a>
+            </div>
+    </div>
+	<div class="choujiang">
+        <img src="images/zhuanpan.png">
+            <!--×ªÅÌ¿ªÊ¼-->
+                <a id="plateBtn" href="javascript:" title=""></a>
+            <!--×ªÅÌ½áÊø-->
+            <div id="lijichou"><img src="images/lijichoujiang.png"></div>
+    </div>
+    <!--¶¥²¿ÏÂÔØ¿ªÊ¼-->
+    <!--<div class="banner">
+        <a href="#"><img src="images/banner.png"></a>
+        <div class="guanbi">
+        	<a href="#"><img src="images/buanbi.png"></a>
+        </div>
+    </div>-->
+    <!--¶¥²¿ÏÂÔØ½áÊø-->
+    <div class="result">
+        <a href="#"><p></p></a>
+    </div>
+    <!--»ñ½±ÐÅÏ¢µ¯²ã¿ªÊ¼-->
+    <div id="result">
+        <p id="resultTxt"></p>
+        <a id="resultBtn" href="javascript:" title="¹Ø±Õ"></a>
+    </div>
+    <!--»ñ½±ÐÅÏ¢µ¯²ã½áÊø-->
+        
+    <img style=" width:100%; position:absolute; top:8%;" src="images/caidai.png">
+</div>
+
+<div id="guize">
+    <ul>
+    <li><img src="images/zhongjiangjilu.png"></li>
+    </ul>
+   
+    <div class="guizez">
+    	<!--ÖÐ½±¼ÇÂ¼¿ªÊ¼-->
+     	<ul class="guize_l">
+            <li>
+                <div class="nicheng">
+                    <p>137****4561</p>
+                </div>
+                
+                <div class="chouzhong">
+                    <p>³éÖÐ</p>
+                </div>
+                
+                <div class="jiangxiang">
+                    <p>½ð±Ò 10</p>
+                </div>
+            </li>
+            <li>
+                <div class="nicheng">
+                    <p>135****4125</p>
+                </div>
+                
+                <div class="chouzhong">
+                    <p>³éÖÐ</p>
+                </div>
+                
+                <div class="jiangxiang">
+                    <p>½ð±Ò 10</p>
+                </div>
+            </li>
+            <li>
+                <div class="nicheng">
+                    <p>177****8852</p>
+                </div>
+                
+                <div class="chouzhong">
+                    <p>³éÖÐ</p>
+                </div>
+                
+                <div class="jiangxiang">
+                    <p>Æß²ÊÔÆÄÏÃÅÆ±X1</p>
+                </div>
+            </li>
+            <li>
+                <div class="nicheng">
+                    <p>158****1245</p>
+                </div>
+                
+                <div class="chouzhong">
+                    <p>³éÖÐ</p>
+                </div>
+                
+                <div class="jiangxiang">
+                    <p>½ð±Ò 10</p>
+                </div>
+            </li><li>
+                <div class="nicheng">
+                    <p>139****7789</p>
+                </div>
+                
+                <div class="chouzhong">
+                    <p>³éÖÐ</p>
+                </div>
+                
+                <div class="jiangxiang">
+                    <p>»§ÍâÕÚÑôÉ¡</p>
+                </div>
+            </li><li>
+                <div class="nicheng">
+                    <p>133****1141</p>
+                </div>
+                
+                <div class="chouzhong">
+                    <p>³éÖÐ</p>
+                </div>
+                
+                <div class="jiangxiang">
+                    <p>¾ÆµêÌåÑéÈ¯X1</p>
+                </div>
+            </li>
+        </ul>
+        <!--ÖÐ½±¼ÇÂ¼½áÊø-->
+        <!--»î¶¯¹æÔò¿ªÊ¼-->
+        <ul class="guize_r">
+            <li>Óö¼ûÏú»êÆßÏ¦½Ú-ÓÎÏ·½áÊøºó¿É½øÐÐ1´Î³é½±</li>
+            <li>·ÖÏíÖ®¿ÉÔÙ³é½±1´Î£»»î¶¯½±Æ·ÒÔÊµÎïÎª×¼£»</li>
+            <li>»î¶¯½±Æ·½«ÒÔÓÊ¼ÄµÄÐÎÊ½¿ìµÝµ½ÄúµÄËùÔÚµØ£¬ÇëÈçÊµÌîÐ´ÖÐ½±ÐÅÏ¢£»</li>
+            <!--<li></li>-->
+            <li>»î¶¯Ê±¼ä£º2016.8.3-8.8£»</li>
+            <li>&lowast;&nbsp;×îÖÕ½âÊÍÈ¨¹éÓö¼ûÂÃÐÐËùÓÐ</li>
+        </ul>
+        <!--»î¶¯¹æÔò½áÊø-->
+	</div>
+    
+</div>
+<div id="loadingDiv"></div>
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	var $plateBtn = $('#plateBtn');
+	var $result = $('#result');
+	var $resultTxt = $('#resultTxt');
+	var $resultBtn = $('#resultBtn');
+
+	$plateBtn.click(function(){
+		$.ajax({
+			url:"http://api.booea.cn:8105/api/lottery.jsp?userid=18338765615&type=wechat",
+			type:"get",
+			dataType:"json",
+			success: function(data){
+				 alert(data);
+				}
+			});
+	 var num = Math.floor(Math.random()*1000);
+                if(num == 0 || num == 1000){
+                       rotateFunc(8,100,'¹§Ï²ÄãÖÐÁË <em>Æß²ÊÔÆÄÏÁùÈÕÎåÒ¹ÓÎX1</em>');
+				             
+                } else {
+                       var data = [0, 1, 2, 3, 4, 5, 6, 7];
+		data = data[Math.floor(Math.random()*data.length)];
+		switch(data){
+			case 1: 
+				rotateFunc(1,170,'¹§Ï²ÄãÖÐÁË <em>Æß²ÊÔÆÄÏÁùÈÕÎåÒ¹ÓÎX1</em>');
+				break;
+			case 2: 
+				rotateFunc(2,65,'¹§Ï²ÄãÖÐÁË <em>½ð±Ò10</em> <a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.yujian.travel">ÏÂÔØappÁ¢¼´Ê¹ÓÃ</a>');
+				break;
+			case 3: 
+				rotateFunc(3,335,'¹§Ï²ÄãÖÐÁË <em>»§ÍâÕÚÑôÉ¡</em>');
+				break;
+			case 4: 
+				rotateFunc(4,247,'¹§Ï²ÄãÖÐÁË <em>½ð±Ò10</em>');
+				break;
+			case 5: 
+				rotateFunc(5,148,'¹§Ï²ÄãÖÐÁË <em>Æß²ÊÔÆÄÏÁùÈÕÎåÒ¹ÓÎX1</em>');
+				break;
+			case 6: 
+				rotateFunc(6,24,'¹§Ï²ÄãÖÐÁË <em>½ð±Ò10</em> <a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.yujian.travel">ÏÂÔØappÁ¢¼´Ê¹ÓÃ</a>');
+				break;
+			case 7: 
+				rotateFunc(7,292,'¹§Ï²ÄãÖÐÁË <em>½ð±Ò10</em> <a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.yujian.travel">ÏÂÔØappÁ¢¼´Ê¹ÓÃ</a>');
+				break;
+		
+			default:
+				rotateFunc(0,203,'¹§Ï²ÄãÖÐÁË <em>Æß²ÊÔÆÄÏÁùÈÕÎåÒ¹ÓÎX1</em>');
+		}
+				}
+	});
+
+	var rotateFunc = function(awards,angle,text){  //awards:½±Ïî£¬angle:½±Ïî¶ÔÓ¦µÄ½Ç¶È
+		$plateBtn.stopRotate();
+		$plateBtn.rotate({
+			angle: 0,
+			duration: 5000,
+			animateTo: angle + 1440,  //angleÊÇÍ¼Æ¬ÉÏ¸÷½±Ïî¶ÔÓ¦µÄ½Ç¶È£¬1440ÊÇÈÃÖ¸Õë¹Ì¶¨Ðý×ª4È¦
+			callback: function(){
+				$resultTxt.html(text);
+				$result.show();
+			}
+		});
+	};
+	
+
+	$resultBtn.click(function(){
+		$result.hide();
+	});
+});
+</script>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	 $('#loadingDiv').click(function(){
+		 $(this).fadeOut("slow");
+	 });
+ });
+ 
+</script>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	 $(".guanbi").click(function(){
+		 $(".banner").fadeOut("slow");
+	 });
+ });
+ 
+// $(function(){
+//	var url = null;
+//	$(document).on('click','#choujiang',function(){
+//		var text = $(this).text();
+//		$('#loadingDiv').css('display','block');	
+//        $('#popup').slideDown();
+//	});	
+	
+//});
+</script>
+<script type="text/javascript">
+$(function(){
+	var url = null;
+	$(document).on('click','.jihuir',function(){
+		var text = $(this).text();
+		$('#loadingDiv').css('display','block');	
+        $('#popup').slideDown();
+	});	
+	
+});
+
+
+</script>
+
+</body>
+</html>

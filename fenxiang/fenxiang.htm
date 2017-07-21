@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>结伴分享</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/templates/default/pintuer/pintuer.css">
+<link rel="stylesheet" href="css/css.css">
+<script src="/templates/default/pintuer/jquery.js"></script>
+<script src="/templates/default/pintuer/pintuer.js"></script>
+<script src="/templates/default/pintuer/respond.js"></script>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$('.one').click(function(){
+		
+		$('.box2').show();
+		
+		
+		});
+			
+	$('.box2').click(function(){
+		
+		
+		$('.box2').hide();
+		
+		
+		});
+		
+	$('.box');
+	
+	
+	});
+</script>
+<body style="background-color:#5ac2d8;" class="mhome">
+<div id="fenxiang">
+<div class="fenxiang">
+<div class="fx_top">
+	 <div class="fx_tou"><img src="${headimg}" style="width:60px;height:60px;border-radius:50px;"></div>
+     <div class="fx_ren" style="width:70px;"><span>${nickname}</span>${sex}
+     	<!--<p style="background-color:blue;"><img src="${sex}" width="15" height="15">${age}</p>-->
+     </div>
+     <div class="fx_dizhi">
+     	<p>【${city1}${city2}】</p>
+        <span>行期:&nbsp;&nbsp;${t_info.appdate[0..10]}</span>
+     </div>
+</div>
+
+<div class="fx_fabiao">
+	<p><span>行程：5天</span></p>
+	<p>${t_info.city}</p>
+    <div class="detailslistimg2">     
+    ${imgs}
+    </div>
+    <div class="fx_lvyou"><div><img src="images/biaoqian.png"></div>
+	<ul>
+    	${tag}
+    	<!--<li><img src="images/xing.png"></li>
+        <li><img src="images/xing1.png"></li>
+        <li><img src="images/xing2.png"></li>-->
+    </ul>
+</div>
+    <!--<img src="images/fx_bner.png">-->
+    <div class="fx_jiaru">
+    	<div>
+        	<ul>
+            	<#list ls_user as t_list>  
+            	<li><img src="${t_list.headimg}" style="border-radius:60px;"></li>
+                </#list>
+                
+            	<!--<li><img src="images/fx_tou1.png"></li>
+                <li><img src="images/fx_tou2.png"></li>
+                <li><img src="images/fx_tou3.png"></li>-->
+                
+            </ul>
+            
+        </div>
+        <div style="float:right;width:100%; text-align:right;">${cy_num}人参与<span>></span></div>
+    </div>
+</div>
+
+</div>
+<div class="fx_height"></div>
+<div class="fenxiang">
+<div class="fx_pinglun"><h2>评论</h2>
+	<ul>
+    	<#list ls_comment as t_list> 
+    	<li><img src="${t_list.headimg}" style="width:50px;height:50px; border-radius:50px; padding-top:0px; margin-top:20px;">
+        	<div class="fx_fabu">${t_list.nickname}<span>${t_list.addtime[0..10]}</span>
+            	<p>${t_list.content}</p>
+                <div><a>回复</a><span>举报</span></div>
+            </div>
+        </li>
+        </#list>
+        <!--<li><img src="images/fx_tou1.png">
+        	<div class="fx_fabu">橙子先生<span>1小时以前</span>
+            	<p>去马尔代夫的走起,已经报名了~有没有小伙伴一起出发 啊？行动起来吧！</p>
+                <div><a href="">回复</a><span>举报</span></div>
+            </div>
+        </li>-->
+    </ul>
+</div>
+</div>
+<div class="fx_height"></div>
+<div class="fenxiang">
+<div class="fx_zmjr"><h2>怎么加入？</h2>
+	<ul>
+    	<li><span>我还没有遇见旅行</span>
+        	<p>点击页面，下载#遇见旅行#App</p>
+        </li>
+        <li><span>我已经有遇见旅行</span>
+        	<p>点击右上角，用浏览器打开，即可加入</p>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="fx_height"></div>
+<div class="fx_bottom">
+	<a class="one"><p>我要加入（已安装遇见旅行）</p></a>
+    <a href="http://a.app.qq.com/o/simple.jsp?pkgname=cn.yujian.travel" class="one"><p>下载遇见旅行（未安装）</p></a>
+    <div class="box">
+		<div class="box2">
+        <img src="/fenxiang/images/tishi.png">
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
